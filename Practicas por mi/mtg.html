@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mtg.css">
+</head>
+
+<body>
+       
+    <div class="ctn">
+      
+        <form id="form" class="principal">
+            <div>
+                <h1>Cartas a buscar </h1>
+            </div>
+            <label for="buscarTipo">Tipo de búsqueda:</label>
+            <select id="buscarTipo">
+                <option value="carta">Carta</option>
+                <option value="costo">Costo</option>
+                <option value="autor">Autor</option>
+              
+                <!-- Agrega más opciones según los tipos de datos disponibles o que se requieran -->
+            </select>
+            <br><br>
+            <label for="buscarValor">Valor a buscar:</label>
+            <input type="text" id="buscarValor" required>
+            <br><br>
+            <button type="submit" class="bth">Realizar Búsqueda</button>    
+        </form>
+    </div>
+    </div>
+    <script src="MTGpractica.js"></script>
+    <script src="buscadormtg.js"></script>
+</body>
+</html>
