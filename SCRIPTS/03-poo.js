@@ -6,7 +6,7 @@ class CuentaBancaria{
         this.saldo+=cantidad;
     }
     retirar(cantidad){
-            if(cantidad <= this.saldo ) {
+            if(cantidad <= this.saldo) {
                 this.saldo -= cantidad 
                 return cantidad
             }else{
@@ -19,7 +19,7 @@ class CuentaBancaria{
 }
 
 const cuenta = new CuentaBancaria(1000);
-
+document.getElementById('output2').innerHTML = `El saldo de su cuenta es: $ ${cuenta.VerSaldo()}`;
 document.getElementById('transactionForm').addEventListener('submit',function(event){event.preventDefault()
     const amount = parseFloat(document.getElementById('amount').value);
     const transactionType = document.getElementById('transactionType').value;
