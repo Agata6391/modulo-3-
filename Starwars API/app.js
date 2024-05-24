@@ -62,12 +62,40 @@ async function displayData(type) {
         itemSelector.appendChild(option)
         
     });
+    itemSelector.onchange= async function () {
+        const url = this.value;
+        const response = await fetch(url);
+        const item = response.json();
+        content.innerHTML = '';
+        let card;
+        if(type==='people'){
+            card = createCharacterCard(item)
+        }else if (type === 'planets') {
+            card = createPlanetCard (item)
+
+        } else if (type === 'starships') {
+            card = createStarShipCard(item)
+        }
+        if (card){
+            content.appendChild(card);
+        }else{
+            console.error('Error: card undefined');
+            };
         
     }
+}
+
+// Agregar eventos de los botones
+buttons.forEach(button=>{
+    button.addEventListener('clic', (event)=>{
+        const type= event.target.id === 'characters' ? 'people': event.target.id;
+        displayData(type);
+    }
+)
+});
 
 
 
 
 
-
-
+ 
