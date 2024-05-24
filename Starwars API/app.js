@@ -1,33 +1,33 @@
-// vamosa ver el url base de la API
-const API_URL='https://swapi.dev/api/ '
+// vamos a ver el url base de la API
+const API_URL = 'https://swapi.dev/api/';
 // Elementos del DOM a llamar
 const content = document.getElementById('content');
 const buttons = document.querySelectorAll('nav button');
 const itemSelector = document.getElementById('item-selector');
-const selectorContainer = document.getElementById('selector-container'); 
+const selectorContainer = document.getElementById('selector-container');
 
 //hacer un funcion para obtener los datos de la api, cada seleccion
 //  de cada parte donde apuntamos seria un endpoint 
 async function fetchData(endpoint) {
-try {
-    const respose = await fetch(API_URL+endpoint);
-    if (!respose.ok){
-        throw new Error('Network Response was not ok')
-    }
-    const data = await respose.json();
-    console.log (`Fetching data from ${endpoint}`, error);
-    return data.results;
-   
-}catch(error){
-    console.error(`Error Fetching Data:`, error);
-    return[];
-};
-};
+    try {
+        const respose = await fetch(API_URL + endpoint);
+        if (!respose.ok) {
+            throw new Error('Network Response was not ok')
+        }
+        const data = await respose.json();
+        console.log(`Fetching data from ${endpoint}`, data);
+        return data.results;
+
+    } catch (error) {
+        console.error(`Error Fetching Data:`, error);
+        return [];
+    };
+}
 // Card para personajes
-function createCharacterCard(character){
-    const card = document.createElement ('div');
-    card.className ='card';
-    card.innerHTML =`
+function createCharacterCard(character) {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
     <h2>${character.name}</h2>
     <p> Altura: ${character.height}</p>
     <p> Peso: ${character.mass}</p>
@@ -38,64 +38,68 @@ function createCharacterCard(character){
     <p>Género: ${character.gender}</p>
     `;
     return card;
-};
+}
 // Card de planetas
 
 //Card naves espaciales
 
 //Funcion para mostrar los datos
 async function displayData(type) {
-    content.innerHTML ='';
-    itemSelector.style.display ='block';
+    content.innerHTML = '';
+    itemSelector.style.display = 'block';
     itemSelector.innerHTML = '<option value = "" disabled selected>Selecione un item</option>';
-    const endpoint = type ==='character' ? 'people': type;
+
+    const endpoint = type === 'characters' ? 'people' : type;
     console.log(`Fetching Data for endpoint: ${endpoint}`);
+
     const data = await fetchData(endpoint);
     if (data.length === 0) {
-        itemSelector.innerHTML = '<option value="" disabled selected>No se encontraron datos</option>';
-        return
+        itemSelector.innerHTML = '<option value="" disabled >No se encontraron datos.</option>';
+        return;
     }
     data.forEach(item => {
         const option = document.createElement('option');
         option.value = item.url;
-        option.textContent =item.length || item.tittle;
-        itemSelector.appendChild(option)
-        
+        option.textContent = item.name || item.tittle;
+        itemSelector.appendChild(option);
+
     });
-    itemSelector.onchange= async function () {
+    itemSelector.onchange = async function () {
         const url = this.value;
         const response = await fetch(url);
-        const item = response.json();
+        const item = await response.json();
         content.innerHTML = '';
+
         let card;
-        if(type==='people'){
+
+        if (type === 'people') {
             card = createCharacterCard(item)
-        }else if (type === 'planets') {
-            card = createPlanetCard (item)
+        } else if (type === 'planets') {
+            card = createPlanetCard(item)
 
         } else if (type === 'starships') {
             card = createStarShipCard(item)
         }
-        if (card){
+        if (card) {
             content.appendChild(card);
-        }else{
+        } else {
             console.error('Error: card undefined');
-            };
-        
+        };
+
     }
 }
 
 // Agregar eventos de los botones
-buttons.forEach(button=>{
-    button.addEventListener('clic', (event)=>{
-        const type= event.target.id === 'characters' ? 'people': event.target.id;
+buttons.forEach(button => {
+    button.addEventListener('click', (event) => {
+        const type = event.target.id === 'characters' ? 'people' : event.target.id;
         displayData(type);
     }
-)
+    )
 });
 
 
 
 
 
- 
+
