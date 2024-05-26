@@ -40,8 +40,39 @@ function createCharacterCard(character) {
     return card;
 }
 // Card de planetas
+function createPlanetCard(planet) {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+        <h2>${planet.name}</h2>
+        <p> Periodo de Rotacion: ${planet.rotation_period}</p>
+        <p> Periodo Orbital: ${planet.orbital_period}</p>
+        <p>diametro: ${planet.diameter}</p>
+        <p>Clima: ${planet.climate}</p>
+        <p>gravedad: ${planet.gravity}</p>
+        <p>Agua ensuperficie: ${planet.terrain}</p>
+        <p>Poblacion: ${planet.population}</p>
+        `;
+    return card;
+
+}
 
 //Card naves espaciales
+function createStarShipCard(starship) {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+        <h2>${starship.name}</h2>
+        <p>Modelo: ${starship.model}</p>
+        <p>Fabricante: ${starship.manufacturer}</p>
+        <p>Costo: ${starship.cost_in_credits}</p>
+        <p>Longitud: ${starship.length}</p>
+        <p>Velocidad Máxima: ${starship.max_atmosphering_speed}</p>
+        <p>Tripulación: ${starship.crew}</p>
+        <p>Pasajeros: ${starship.passengers}</p>
+        `;
+    return card;
+}
 
 //Funcion para mostrar los datos
 async function displayData(type) {
@@ -88,6 +119,9 @@ async function displayData(type) {
 
     }
 }
+
+
+
 
 // Agregar eventos de los botones
 buttons.forEach(button => {
