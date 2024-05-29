@@ -31,11 +31,11 @@ function createCharacterCard(character) {
     <h2>${character.name}</h2>
     <p> Altura: ${character.height}</p>
     <p> Peso: ${character.mass}</p>
-    <p>Color de cabello: ${character.hair_color}</p>
-    <p>Color de piel: ${character.skin_color}</p>
-    <p>Color de ojos: ${character.eye_color}</p>
-    <p>Año de nacimiento: ${character.birth_year}</p>
-    <p>Género: ${character.gender}</p>
+    <p> Color de cabello: ${character.hair_color}</p>
+    <p> Color de piel: ${character.skin_color}</p>
+    <p> Color de ojos: ${character.eye_color}</p>
+    <p> Año de nacimiento: ${character.birth_year}</p>
+    <p> Género: ${character.gender}</p>
     `;
     return card;
 }
@@ -47,11 +47,11 @@ function createPlanetCard(planet) {
         <h2>${planet.name}</h2>
         <p> Periodo de Rotacion: ${planet.rotation_period}</p>
         <p> Periodo Orbital: ${planet.orbital_period}</p>
-        <p>diametro: ${planet.diameter}</p>
-        <p>Clima: ${planet.climate}</p>
-        <p>gravedad: ${planet.gravity}</p>
-        <p>Agua ensuperficie: ${planet.terrain}</p>
-        <p>Poblacion: ${planet.population}</p>
+        <p> Diametro: ${planet.diameter}</p>
+        <p> Clima: ${planet.climate}</p>
+        <p> Gravedad: ${planet.gravity}</p>
+        <p> En superficie: ${planet.terrain}</p>
+        <p> Poblacion: ${planet.population}</p>
         `;
     return card;
 
@@ -63,13 +63,13 @@ function createStarShipCard(starship) {
     card.className = 'card';
     card.innerHTML = `
         <h2>${starship.name}</h2>
-        <p>Modelo: ${starship.model}</p>
-        <p>Fabricante: ${starship.manufacturer}</p>
-        <p>Costo: ${starship.cost_in_credits}</p>
-        <p>Longitud: ${starship.length}</p>
-        <p>Velocidad Máxima: ${starship.max_atmosphering_speed}</p>
-        <p>Tripulación: ${starship.crew}</p>
-        <p>Pasajeros: ${starship.passengers}</p>
+        <p> Modelo: ${starship.model}</p>
+        <p> Fabricante: ${starship.manufacturer}</p>
+        <p> Costo: ${starship.cost_in_credits}</p>
+        <p> Longitud: ${starship.length}</p>
+        <p> Velocidad Máxima: ${starship.max_atmosphering_speed}</p>
+        <p> Tripulación: ${starship.crew}</p>
+        <p> Pasajeros: ${starship.passengers}</p>
         `;
     return card;
 }
