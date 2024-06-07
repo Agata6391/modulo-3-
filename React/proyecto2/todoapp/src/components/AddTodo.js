@@ -7,8 +7,7 @@ function AddTodo({addTodo}){
         if (inputValue.trim()){
             addTodo(inputValue);
             setInputValue('');
-        }
-    
+        }    
     };
     return(
         <form className="add-todo-form" onSubmit={handleSubmit}>
@@ -19,13 +18,11 @@ function AddTodo({addTodo}){
                 placeholder="Agregar una Tarea"
                 className="add-todo"
                 />
-
-                
-
-
+                <button type="summit"
+                className="add-todo-button">Agregar</button>
+        
         </form>
-
-
     )
 }
- 
+
+export default AddTodo;

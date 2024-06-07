@@ -1,4 +1,5 @@
 import React from "react";
+
 function TodoItem({todo,removeTodo}){
 
     return(
@@ -8,4 +9,4 @@ function TodoItem({todo,removeTodo}){
         </div>
     );
 }
-export default TodoItem            
+export default TodoItem;            
