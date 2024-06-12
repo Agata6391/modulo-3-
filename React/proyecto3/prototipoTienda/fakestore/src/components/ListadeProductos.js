@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react";
 import ProductCard from "./ProductCard";
-import axios from "axios"
+import axios from "axios";
 
 
 const ProductList = ()=>{
@@ -19,5 +19,5 @@ const ProductList = ()=>{
 
         </div>
     );
-}
+};
 export default ProductList;
