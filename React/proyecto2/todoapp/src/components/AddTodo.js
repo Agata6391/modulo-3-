@@ -22,7 +22,7 @@ function AddTodo({addTodo}){
                 className="add-todo-button">Agregar</button>
         
         </form>
-    )
+    );
 }
 
 export default AddTodo;
