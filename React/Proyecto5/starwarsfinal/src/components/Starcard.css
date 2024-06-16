@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: yellow;
+    width: 100vw;
+    margin: 0; /* Añadir margen cero para eliminar el margen predeterminado del navegador */
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 20px;
+    background-color: rgb(17, 17, 17);
+}
+
+button {
+    color: yellow;
+    background-color: rgb(68, 68, 68);
+    border: 1px solid yellow; /* Cambiar border-color a border */
+    padding: 5px 16px;
+    margin: 5px; /* Añadir margen entre botones */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+}
+
+button:hover {
+    background-color: rgb(85, 85, 85); /* Añadir un color de fondo más claro al pasar el ratón por encima */
+}
+
+select {
+    color: yellow;
+    background-color: rgb(68, 68, 68);
+    border: 1px solid yellow; /* Cambiar border-color a border */
+    padding: 5px 16px;
+    margin: 10px;
+}
+
+p {
+    color: white;
+}
+
+main {
+    background-color: black;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+nav {
+    width: 80%;
+    max-width: 300px;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+#selector-container {
+    display: flex;
+}
+
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card {
+    border: 1px solid yellow;
+    padding: 10px 20px;
+    background-color: rgb(68, 68, 68);
+    border-radius: 10px;
+    width: 80%;
+    max-width: 300px;
+    box-sizing: border-box;
+    margin: 10px; /* Añadir margen entre tarjetas */
+    color: yellow; /* Asegurar que el texto dentro de las tarjetas es amarillo */
+}
+
+.container {
+    padding: 20px;
+}
+
+.buttons {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Añadir espacio entre botones */
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Añadir espacio entre tarjetas */
+}
+
+/* Específicos para tipos de tarjetas */
+.ship {
+    border-left: 4px solid #2196F3; /* Azul para naves */
+}
+
+.character {
+    border-left: 4px solid #4CAF50; /* Verde para personajes */
+}
+
+.planet {
+    border-left: 4px solid #FFC107; /* Amarillo para planetas */
+}

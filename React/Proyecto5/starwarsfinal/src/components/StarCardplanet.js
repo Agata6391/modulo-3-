@@ -1,5 +1,5 @@
 import React from 'react';
-import './StarCard.css';
+
 
 const StarCardPlanet = ({ planet }) => {
     return (
