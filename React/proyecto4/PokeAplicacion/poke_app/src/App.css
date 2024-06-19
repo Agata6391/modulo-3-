@@ -1,38 +1,41 @@
-.App {
+/* Estilo general de la aplicación */
+body {
+  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+  font-family: 'Verdana', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
   text-align: center;
+  padding: 2rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  color: #ffcc01;
+  font-size: 3rem;
+  text-shadow: 2px 2px #2a75bb;
+  margin-bottom: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.filter-buttons {
+  margin-bottom: 2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.filter-buttons button {
+  background: #2a75bb;
   color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  margin: 0.2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-family: 'Verdana', sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.filter-buttons button:hover {
+  background: #ffcc01;
+  color: #2a75bb;
 }

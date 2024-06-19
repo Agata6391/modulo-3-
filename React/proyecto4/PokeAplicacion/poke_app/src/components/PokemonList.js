@@ -3,7 +3,7 @@ import PokemonCard from './PokemonCard';
 import './PokemonList.css';
 
 const PokemonList=({pokemons, filterPokemon})=>{
-    const [filterPokemon, setFilteredPokemon] = useState(pokemons);
+    const [filteredPokemon, setFilteredPokemon] = useState(pokemons);
         useEffect(()=>{
             setFilteredPokemon(
             pokemons.filter((pokemon)=>pokemon.type === filterPokemon || filterPokemon === 'all' )
@@ -12,7 +12,7 @@ const PokemonList=({pokemons, filterPokemon})=>{
 
        return(
         <div className="pokemon-list">
-           {filterPokemon.map((pokemon)=>(
+           {filteredPokemon.map((pokemon)=>(
             <PokemonCard key={pokemon.id} pokemon={pokemon}/>
            ))}
         </div>

@@ -14,6 +14,6 @@ const App = () => {
         </div>
     );
 };
-
+// filtrado con .map
 
 export default App;

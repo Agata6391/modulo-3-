@@ -17,8 +17,7 @@ const Pokedex = () => {
                         image: pokemon.sprites.font_default,
                         type: pokemon.types[0].type.name
                     };
-                    return pokemonInfo;
-                });
+                 });
                 setPokemons(pokemonData)
             });
     },[]);
@@ -29,7 +28,7 @@ const Pokedex = () => {
 
     return(
         <div className="pokedex">
-            <h1>Pokedex</h1>
+            <h1>Poke-dex</h1>
             <PokemonFilter filterPokemon={handleFilterChange}/>
             <PokemonList pokemons={pokemons} filterPokemon={filterType}/>
         </div>
