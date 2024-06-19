@@ -50,6 +50,7 @@ const StarCardContainer = () => {
         <button onClick={() => handleResourceChange('ships')}>Naves</button>
         <button onClick={() => handleResourceChange('planets')}>Planetas</button>
         <button onClick={() => handleResourceChange('characters')}>Personajes</button>
+        <button onClick={() => handleResourceChange('films')}>Pelis</button>
       </div>
 
       {error && <p>Error: {error.message}</p>}
