@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import StarCardChar from './StarCardCharacter';
 import StarCardPlanet from './StarCardplanet';
 import StarCardShip from "./StarCardShip";
+import StarCardFilm from "./StarCardFilm";
 
 
 
@@ -32,7 +33,8 @@ const StarCardContainer = () => {
       setError(null);
       const endpoint = resourceType === 'ships' ? 'starships/' :
         resourceType === 'planets' ? 'planets/' :
-          'people/';
+          resourceType === 'people' ? 'people/':
+          'films/';
       const fetchedData = await fetchData(endpoint);
       setData(fetchedData);
 
@@ -49,15 +51,16 @@ const StarCardContainer = () => {
       <div className='buttons'>
         <button onClick={() => handleResourceChange('ships')}>Naves</button>
         <button onClick={() => handleResourceChange('planets')}>Planetas</button>
-        <button onClick={() => handleResourceChange('characters')}>Personajes</button>
-        <button onClick={() => handleResourceChange('films')}>Pelis</button>
+        <button onClick={() => handleResourceChange('people')}>Personajes</button>
+        <button onClick={() => handleResourceChange('film')}>Pelis</button>
       </div>
 
       {error && <p>Error: {error.message}</p>}
       <div className='cards'>
-        {resourceType === 'ships' && data.map((ship) => <StarCardShip key={ship.name} starship={ship} />)}
-        {resourceType === 'planets' && data.map((planet) => <StarCardPlanet key={planet.name} planet={planet} />)}
-        {resourceType === 'characters' && data.map((character) => <StarCardChar key={character.name} character={character} />)}
+      {resourceType === 'ships' && data.map((ship) => <StarCardShip key={ship.url} starship={ship} />)}
+        {resourceType === 'planets' && data.map((planet) => <StarCardPlanet key={planet.url} planet={planet} />)}
+        {resourceType === 'people' && data.map((character) => <StarCardChar key={character.url} character={character} />)}
+        {resourceType === 'film' && data.map((film) => <StarCardFilm key={film.url} film={film} />)}
       </div>
     </div>
   );

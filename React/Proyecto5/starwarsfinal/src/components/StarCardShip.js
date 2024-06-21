@@ -1,4 +1,5 @@
 import React from 'react';
+import './StarCardShip.css';
 
 
 const StarCardShip = ({ starship }) => {

@@ -1,6 +1,10 @@
 import React from 'react';
 import StarCardContainer from './components/StarCardContainer';
-import './components/Starcard.css'; 
+import './Starcard.css'; 
+
+
+
+
 
 const App = () => {
     return (
